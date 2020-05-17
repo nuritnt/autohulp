@@ -1,0 +1,17 @@
+{
+  "name": "autohulp",
+  "displayName": "autohulp",
+  "expo": {
+    "name": "autohulp",
+    "slug": "autohulp",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
