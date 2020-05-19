@@ -41,7 +41,7 @@ export default class Welcome extends Component {
           <TouchableHighlight
             style={globalStyles.button}
             underlayColor={'#FFFFFF'}
-            onPress={() => Alert.alert('Add New Car')}
+            onPress={() => navigate('AddCar')}
           >
             <Text style={globalStyles.buttonText}>
               Add New Car
