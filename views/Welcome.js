@@ -50,7 +50,7 @@ export default class Welcome extends Component {
           <TouchableHighlight
             style={globalStyles.button}
             underlayColor={'#FFFFFF'}
-            onPress={() => Alert.alert('Enter Code')}
+            onPress={() => navigate('EnterCode')}
           >
             <Text style={globalStyles.buttonText}>
               Enter Code
