@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { StyleSheet, View, Text, Image, Alert, TextInput } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import globalStyles from '../globalStyles';
@@ -44,8 +44,14 @@ const styles = StyleSheet.create({
 });
 
 export default class AddCar extends Component {
+  state = {
+    name: '',
+    licensePlate: '',
+  }
+
   render() {
     const { navigate } = this.props.navigation
+
     return (
       <View style={styles.container}>
         <Image style={styles.image} source={require('../img/icon.png')} />
@@ -57,6 +63,7 @@ export default class AddCar extends Component {
             style={styles.textInput}
             placeholder={'Saable'}
             placeholderTextColor={'#989898'}
+            onChangeText={text => this.setState({name: text})}
           >
           </TextInput>
           <Text style={styles.inputLabel}>License Plate</Text>
@@ -64,6 +71,7 @@ export default class AddCar extends Component {
             style={styles.textInput}
             placeholder={'ZH123456'}
             placeholderTextColor={'#989898'}
+            onChangeText={text => this.setState({licensePlate: text})}
           ></TextInput>
           <Text style={styles.inputLabel}>Autohulp Car Code</Text>
           <TextInput
@@ -77,7 +85,7 @@ export default class AddCar extends Component {
           <TouchableHighlight
             style={globalStyles.button}
             underlayColor={'#FFFFFF'}
-            onPress={() => Alert.alert('Car added')}
+            onPress={() => console.log(this.state.name, this.state.licensePlate)}
           >
             <Text style={globalStyles.buttonText}>
               Add Car
@@ -89,3 +97,8 @@ export default class AddCar extends Component {
     )
   }
 }
+
+// TODO:
+// console log car object
+// replace object with useMutation
+// check in hasura if worky
